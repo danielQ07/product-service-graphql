@@ -1,0 +1,28 @@
+type Product{
+    id: String!,
+    name: String,
+    price: Float,
+    quantity: Int,
+    category:Category
+}
+
+type Category{
+    id: Float,
+    nombre: String
+}
+
+input ProductRequest{
+    name: String,
+    price: Float,
+    quantity: Int,
+    categoryId:Float
+}
+
+type Query{
+    getAllProducts:[Product],
+    getThreeMoreExpensiveProducts:[Product]
+}
+
+type Mutation{
+    saveProduct(Request: ProductRequest):Product
+}
