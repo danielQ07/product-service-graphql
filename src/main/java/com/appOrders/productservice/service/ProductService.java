@@ -6,16 +6,18 @@ import com.appOrders.productservice.model.Product;
 import com.appOrders.productservice.repository.CategoryRepository;
 import com.appOrders.productservice.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
+
 public class ProductService {
-    private final ProductRepository productRepository;
-    private final CategoryRepository categoryRepository;
+    @Autowired
+    private ProductRepository productRepository;
+    private CategoryRepository categoryRepository;
 
     public List<Product> getAllProducts(){
         return productRepository.findAll();
