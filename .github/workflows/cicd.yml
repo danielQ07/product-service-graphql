@@ -1,0 +1,9 @@
+name: Deploy to azure app service
+on:
+  push:
+    branches:
+      - deploy-to-azure-app-service
+jobs:
+  build:
+    -name: Checkout Source
+    users: actions/checkout
